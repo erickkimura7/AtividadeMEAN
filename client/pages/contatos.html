@@ -1,0 +1,126 @@
+<div ng-hide="logado">
+<h1>Lista de Contatos</h1>
+<br>
+<br>
+<!--<table class="table">-->
+<!--	<tr>-->
+<!--		<th>Nome-->
+<!--		</th>-->
+<!--		<th>Email-->
+<!--		</th>-->
+<!--		<th>Numero-->
+<!--		</th><th></th><th></th>-->
+<!--	</tr>-->
+<!--	<tr ng-repeat-start="contact in contacts">-->
+<!--		<td>{{contact.nome}}-->
+<!--		</td>-->
+<!--		<td>{{contact.email}}-->
+<!--		</td>-->
+<!--		<td>{{contact.numero}}-->
+<!--		</td>-->
+<!--		<td>-->
+<!--		<input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow($index)"/>-->
+<!--		</td>-->
+<!--		<td><div class="col-xs-3 text-right"><a href="" class="btn btn-primary" ng-click="showEditRow(contact)"><span>Edit</span></a></div></td>-->
+<!--	</tr>-->
+<!--	<tr ng-repeat-end="" ng-show="active==contact" ng-class-odd="'alt'">-->
+<!--	        <td><input class="form-control input-sm" ng-model="contacts.selected.nome"></td>-->
+<!--	        <td><input class="form-control input-sm" ng-model="contacts.selected.email"></td>  -->
+<!--	        <td><input class="form-control input-sm" ng-model="contacts.selected.numero"></td>-->
+<!--	        <td><button class="btn btn-default" ng-click="saveContact($index)">Save</button></div></td>-->
+<!--	        <td><button class="btn btn-default" ng-click="reset()">Cancel</button></div></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--    	<td><input type="text" class="form-control" name="nome" ng-model="nome" /></td>-->
+<!--    	<td><input type="text" class="form-control" name="email" ng-model="email" /></td>-->
+<!--    	<td><input type="text" class="form-control" name="numero" ng-model="numero" /></td>-->
+<!--    	<td><button class="btn btn-primary" ng-click="addRow()">Add</button></div></td>-->
+<!--    </tr>-->
+<!--</table>-->
+<div style="padding-top:0px;float:left; width: 200px;">
+		
+		<button style="width:100%;" class="btn btn-default" ng-click="adic='true';">Novo Contato</button>
+		<br>
+		<h1 style="margin-bottom:0px;font-size:24px;">Seus Contatos:</h1>
+		 <div style ="margin-top:0px;" class="list-group" ><br>
+			<a ng-repeat="contact in contacts" style="cursor:pointer;overflow:hidden;" ng:class="{true:'list-group-item active', false:'list-group-item'}[active==contact]" ng-click="showEditRow(contact,$index)">{{contact.nome}}</a>
+		 </div>
+</div>
+
+<div style="display:table-cell;padding-left: 40px;width:55vw;">
+	<div ng-hide="adic">
+		<h2 style="margin-top: 0px;">Detalhes do contato</h2><br>
+	<div style="width:100%;">
+	<div class="input-group">
+    <span class="input-group-addon">Nome</span>
+    <input id="email" type="text" class="form-control" name="nome" ng-model="contacts.selected.nome">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">Endereço</span>
+    <input id="email" type="text" class="form-control" name="email" ng-model="contacts.selected.endereco">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">Telefone Fixo</span>
+    <input id="email" type="text" class="form-control" name="numero" ng-model="contacts.selected.telfixo">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">Telefone Móvel</span>
+    <input id="email" type="text" class="form-control" name="numero" ng-model="contacts.selected.telmovel">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">E-mail</span>
+    <input id="email" type="text" class="form-control" name="numero" ng-model="contacts.selected.email">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">Observações</span>
+    <input id="email" type="text" class="form-control" name="numero" ng-model="contacts.selected.obs">
+ 	</div>
+ 	</div>
+ 	<br>
+ 	<button class="btn btn-default" ng-click="saveContact(actual)">Salvar</button>
+ 	<button class="btn btn-default" ng-click="removeRow(actual)">Deletar</button>
+ 	</div>
+ 	
+ 	<div ng-show="adic">
+ 		<h2 style="margin-top: 0px;">Insira os dados do novo contato</h2><br>
+ 		<div class="input-group">
+    <span class="input-group-addon">Nome</span>
+    <input id="email" type="text" class="form-control" name="nome" ng-model="nome">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">Endereço</span>
+    <input id="email" type="text" class="form-control" name="endereco" ng-model="endereco">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">Telefone Fixo</span>
+    <input id="email" type="text" class="form-control" name="telfixo" ng-model="telfixo">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">Telefone Móvel</span>
+    <input id="email" type="text" class="form-control" name="telmovel" ng-model="telmovel">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">E-mail</span>
+    <input id="email" type="text" class="form-control" name="email" ng-model="email">
+ 	</div>
+ 	<br>
+ 	<div class="input-group">
+    <span class="input-group-addon">Observações</span>
+    <input id="email" type="text" class="form-control" name="obs" ng-model="obs">
+ 	</div>
+ 	<br>
+ 	<button class="btn btn-default" ng-click="addRow();adic='';">Salvar</button>
+ 	<button class="btn btn-default" ng-click="adic=''">Cancelar</button>
+ 	</div><div></div>
+	</div>
+	</div>
+</div>

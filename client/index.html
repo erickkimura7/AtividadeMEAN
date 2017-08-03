@@ -1,0 +1,36 @@
+<html ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <title>Projeto MEAN</title>
+    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./services.js"></script>
+    <script src="./controller.js"></script>
+</head>
+   
+<body>
+    <div style="width=100%;" >
+        <div style="width:100%;height:100px;background:#000000;">
+            <p style="color:#FFFFFF;font-size: 29px;padding-top: 20px;padding-left: 20px;">WebSite MEAN</p>
+        </div>
+        <div >
+        <div class="btn-group" >
+            <a href="#/">Home</a>
+            <a href="#/contatos">Contatos</a>
+            <a href="#/sobre">Sobre</a>
+            <a ng-hide="deslogado" href="#/login">Login</a>
+            <a ng-hide="logado" ng-controller="logoutController" ng-click='logout()'>Logout</a>
+        </div>
+        </div>
+        <div class="container">
+            <div ng-view="myApp"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<div ng-hide="logado">
+<h1>Lista de Contatos</h1>
+<br>
+<br>
+<table class="table">
+	<tr>
+		<th>Nome
+		</th>
+		<th>Email
+		</th>
+		<th>Numero
+		</th><th></th><th></th>
+	</tr>
+	<tr ng-repeat-start="contact in contacts">
+		<td>{{contact.nome}}
+		</td>
+		<td>{{contact.email}}
+		</td>
+		<td>{{contact.numero}}
+		</td>
+		<td>
+		<input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow($index)"/>
+		</td>
+		<td><div class="col-xs-3 text-right"><a href="" class="btn btn-primary" ng-click="showEditRow(contact)"><span>Edit</span></a></div></td>
+	</tr>
+	<tr ng-repeat-end="" ng-show="active==contact" ng-class-odd="'alt'">
+	        <td><input class="form-control input-sm" ng-model="contacts.selected.nome"></td>
+	        <td><input class="form-control input-sm" ng-model="contacts.selected.email"></td>  
+	        <td><input class="form-control input-sm" ng-model="contacts.selected.numero"></td>
+	        <td><button class="btn btn-default" ng-click="saveContact($index)">Save</button></div></td>
+	        <td><button class="btn btn-default" ng-click="reset()">Cancel</button></div></td>
+    </tr>
+    <tr>
+    	<td><input type="text" class="form-control" name="nome" ng-model="nome" /></td>
+    	<td><input type="text" class="form-control" name="email" ng-model="email" /></td>
+    	<td><input type="text" class="form-control" name="numero" ng-model="numero" /></td>
+    	<td><button class="btn btn-primary" ng-click="addRow()">Add</button></div></td>
+    </tr>
+</table>
+</div>
